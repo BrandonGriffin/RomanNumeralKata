@@ -8,10 +8,8 @@ namespace RomanNumeralKata
 {
     public class Converter
     {
-        
         public Int32 Convert(String numeral)
         {
-            var number = 0;
             var conversionChart = new Dictionary<Char, Int32>
                                     {
                                         { 'I', 1 },
@@ -23,17 +21,23 @@ namespace RomanNumeralKata
                                         { 'M', 1000 }
                                     };
 
-
+            var number = 0;
+            
             for (var i = 0; i < numeral.Length; i++)
             {
                 var numberToAdd = conversionChart[numeral[i]];
                 number += numberToAdd;
 
-                if (i > 0 && numberToAdd > conversionChart[numeral[i - 1]])
-                    number -= 2 * conversionChart[numeral[i - 1]];                    
+                if (i > 0 && NumberShouldBeSubtracted(conversionChart[numeral[i - 1]], numberToAdd))
+                    number -= 2 * conversionChart[numeral[i - 1]]; 
             }
 
             return number;
+        }
+
+        private Boolean NumberShouldBeSubtracted(Int32 previousNumber, Int32 numberToAdd)
+        {
+            return numberToAdd > previousNumber;
         }
     }
 }

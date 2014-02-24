@@ -10,7 +10,13 @@ namespace RomanNumeralKata
     {
         public Int32 Convert(String numeral)
         {
-            return 1;
+            var number = 0;
+
+            foreach (var letter in numeral)
+                if (letter == 'I')
+                    number++;
+
+            return number;
         }
     }
 }

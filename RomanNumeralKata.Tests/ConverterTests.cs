@@ -38,5 +38,40 @@ namespace RomanNumeralKata.Tests
             var actual = converter.Convert("V");
             Assert.That(actual, Is.EqualTo(5));
         }
+
+        [Test]
+        public void XReturns10()
+        {
+            var actual = converter.Convert("X");
+            Assert.That(actual, Is.EqualTo(10));
+        }
+
+        [Test]
+        public void LReturns50()
+        {
+            var actual = converter.Convert("L");
+            Assert.That(actual, Is.EqualTo(50));
+        }
+
+        [Test]
+        public void CReturns100()
+        {
+            var actual = converter.Convert("C");
+            Assert.That(actual, Is.EqualTo(100));
+        }
+
+        [Test]
+        public void DReturns500()
+        {
+            var actual = converter.Convert("D");
+            Assert.That(actual, Is.EqualTo(500));
+        }
+
+        [Test]
+        public void MReturns1000()
+        {
+            var actual = converter.Convert("M");
+            Assert.That(actual, Is.EqualTo(1000));
+        }
     }
 }

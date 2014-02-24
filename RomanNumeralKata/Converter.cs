@@ -8,5 +8,9 @@ namespace RomanNumeralKata
 {
     public class Converter
     {
+        public object Convert(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

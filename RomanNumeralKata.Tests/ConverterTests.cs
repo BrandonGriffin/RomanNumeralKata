@@ -31,5 +31,12 @@ namespace RomanNumeralKata.Tests
             var actual = converter.Convert("II");
             Assert.That(actual, Is.EqualTo(2));
         }
+
+        [Test]
+        public void VReturns5()
+        {
+            var actual = converter.Convert("V");
+            Assert.That(actual, Is.EqualTo(5));
+        }
     }
 }

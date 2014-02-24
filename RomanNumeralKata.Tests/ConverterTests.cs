@@ -73,5 +73,26 @@ namespace RomanNumeralKata.Tests
             var actual = converter.Convert("M");
             Assert.That(actual, Is.EqualTo(1000));
         }
+
+        [Test]
+        public void VIReturns6()
+        {
+            var actual = converter.Convert("VI");
+            Assert.That(actual, Is.EqualTo(6));
+        }
+
+        [Test]
+        public void IVReturns4()
+        {
+            var actual = converter.Convert("IV");
+            Assert.That(actual, Is.EqualTo(4));
+        }
+
+        [Test]
+        public void XCIXReturns99()
+        {
+            var actual = converter.Convert("XCIX");
+            Assert.That(actual, Is.EqualTo(99));
+        }
     }
 }

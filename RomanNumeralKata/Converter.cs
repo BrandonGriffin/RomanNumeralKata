@@ -22,10 +22,16 @@ namespace RomanNumeralKata
                                         { 'D', 500 },
                                         { 'M', 1000 }
                                     };
-            
 
-            foreach (var letter in numeral)
-                    number += conversionChart[letter];
+
+            for (var i = 0; i < numeral.Length; i++)
+            {
+                var numberToAdd = conversionChart[numeral[i]];
+                number += numberToAdd;
+
+                if (i > 0 && numberToAdd > conversionChart[numeral[i - 1]])
+                    number -= 2 * conversionChart[numeral[i - 1]];                    
+            }
 
             return number;
         }
